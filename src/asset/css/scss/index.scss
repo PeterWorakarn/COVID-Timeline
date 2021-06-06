@@ -194,18 +194,26 @@ html {
                 .profile {
                     margin: 0 auto;
                     max-width: 450px;
+                    height: 80px;
                     display: flex;
                     background: $color-accent-3;
                     border-radius: 60px;
-                    padding: 16px 16px;
+                    padding: 8px;
+                    margin-bottom: 1rem;
 
                     &__img {
                         border-radius: 50%;
+                        margin-right: 8px;
                     }
 
                     &__detail {
+                        width: 100%;
+
                         .profile__wrapper {
-                            display:flex;
+                            display: flex;
+                            justify-content: flex-start;
+                            gap: 10px;
+                            height: 30px;
                         }
                     }
                 }
@@ -214,21 +222,54 @@ html {
                     display: grid;
                     grid-template-columns: 20px 1fr;
                     grid-template-rows: 1fr;
+
                     &__line {
                         background: $color-accent-1;
-                        opacity:0.4;
-                        width:10px;
-                        height:100%;
+                        opacity: 0.4;
+                        width: 10px;
+                        height: 100%;
                         border-radius: 10px;
                     }
+
                     &__content {
                         display: flex;
+                        align-items: flex-start;
+
                         .timeline__dot {
-                            margin-left: -1.5rem;
+                            margin-top: 1.25rem;
+                            margin-left: -1.45rem;
                             color: $color-accent-1;
                         }
-                        .timeline__detail {
 
+                        .timeline__detail {
+                            display: grid;
+                            margin: 0 1.5rem 1rem 1.5rem;
+                            border-radius: .5rem;
+                            box-shadow: 0 3px 1px 2px rgba(0, 0, 0, 0.20), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+                            padding: 8px 16px;
+                            grid-template-areas:
+                                "group group group"
+                                "time description clear";
+                            grid-gap: .25rem;
+                            .timeline__date {
+                                margin: 0;
+                                grid-area: group;
+                            }
+
+                            .timeline__time {
+                                margin: 0;
+                                grid-area: time;
+                            }
+
+                            .timeline__clear {
+                                margin: 0;
+                                grid-area: clear;
+                            }
+
+                            .timeline__description {
+                                margin: 0;
+                                grid-area: description;
+                            }
                         }
                     }
                 }
